@@ -99,6 +99,7 @@ SEARCH_PATHS = [
     f"/content/{FILENAME}",
     f"/mnt/user-data/uploads/{FILENAME}",
     Path.home() / FILENAME,
+    Path(__file__).parent / "content" / FILENAME,  # ← subfolder content/
 ]
 
 @st.cache_data(show_spinner="Memuat dataset…")
