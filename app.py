@@ -94,12 +94,15 @@ st.markdown("""
 # ══════════════════════════════════════════════
 FILENAME = "df_combined_final.csv"
 SEARCH_PATHS = [
+Path("content") / FILENAME,                     # ← content/df_combined_final.csv (RELATIF)
     FILENAME,
     Path(__file__).parent / FILENAME,
+    Path(__file__).parent / "content" / FILENAME,
+    Path(os.getcwd()) / "content" / FILENAME,        # ← pakai os.getcwd() juga
+    Path(os.getcwd()) / FILENAME,
     f"/content/{FILENAME}",
     f"/mnt/user-data/uploads/{FILENAME}",
     Path.home() / FILENAME,
-    Path(__file__).parent / "content" / FILENAME,  # ← subfolder content/
 ]
 
 @st.cache_data(show_spinner="Memuat dataset…")
