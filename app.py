@@ -15,7 +15,7 @@ st.set_page_config(
 # 2. Data Loading Function
 @st.cache_data
 def load_data():
-    file_path = 'content/df_combined_final.csv'
+    file_path = '/content/df_combined_final.csv'
     if os.path.exists(file_path):
         df = pd.read_csv(file_path)
         # Convert 'at' column to datetime
